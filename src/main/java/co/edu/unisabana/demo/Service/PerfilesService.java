@@ -23,4 +23,8 @@ public class PerfilesService {
     public List<Perfiles> consultarPerfiles(){
         return repository.findAll();
     }
+
+    public  Perfiles getPerfilByEmpleadoId(Integer id) {
+        return repository.findById(id).orElse(null);
+    }
 }

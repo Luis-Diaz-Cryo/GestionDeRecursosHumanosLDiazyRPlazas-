@@ -3,10 +3,7 @@ package co.edu.unisabana.demo.Controller;
 
 import co.edu.unisabana.demo.Entity.Empleado;
 import co.edu.unisabana.demo.Service.EmpleadoService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,12 @@ public class EmpleadoController {
     @GetMapping("/empleados")
     public List<Empleado> consultarEmpleados(){
         return service.consultarEmpleados();
+    }
+
+    @GetMapping("empleado/{id}")
+    public Empleado consultarEmpleado(@PathVariable Integer id){
+        return service.consultarEmpleado(id);
+
     }
 
 

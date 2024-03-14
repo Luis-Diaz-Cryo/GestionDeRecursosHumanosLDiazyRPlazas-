@@ -1,10 +1,7 @@
 package co.edu.unisabana.demo.Entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table
@@ -16,16 +13,19 @@ public class Perfiles {
 
     @Id
     @Column
-    private Integer id;
+    private Integer empId;
 
     @Column
     private String Habilidades;
 
     @Column
-    private String Eperencias;
+    private String Experencias;
 
     @Column
-    private Integer Certificaciones;
+    private String Certificaciones;
+
+    @OneToOne
+    private Empleado empleado;
 
 
 }

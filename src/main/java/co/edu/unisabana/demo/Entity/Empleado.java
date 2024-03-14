@@ -1,9 +1,6 @@
 package co.edu.unisabana.demo.Entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table
@@ -27,5 +24,8 @@ public class Empleado {
 
     @Column
     private String Cargo;
+
+    @OneToOne(mappedBy = "empleado")
+    private Perfiles perfiles;
 
 }
