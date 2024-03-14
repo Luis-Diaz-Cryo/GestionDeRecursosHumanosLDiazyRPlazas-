@@ -24,8 +24,4 @@ public class Empleado {
 
     @Column
     private String Cargo;
-
-    @OneToOne(mappedBy = "empleado")
-    private Perfiles perfiles;
-
 }

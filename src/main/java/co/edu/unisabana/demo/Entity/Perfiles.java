@@ -24,8 +24,7 @@ public class Perfiles {
     @Column
     private String Certificaciones;
 
-    @OneToOne
-    private Empleado empleado;
+
 
 
 }
