@@ -21,19 +21,19 @@ public class RolesService {
         this.repository = repository;
     }
 
-    public void guardarRoles(Roles roles){
+    public void guardarRoles(Roles roles) {
         repository.save(roles);
     }
 
-    public List<Roles> consultarRoles(){
+    public List<Roles> consultarRoles() {
         return repository.findAll();
     }
 
-    public Roles consultarRole(@PathVariable String nombre){
+    public Roles consultarRole(@PathVariable String nombre) {
         return repository.findById(nombre).orElse(null);
     }
 
-    public boolean eliminarRole(String  nombre) {
+    public boolean eliminarRole(String nombre) {
         Optional<Roles> rolesOptional = repository.findById(nombre);
         if (rolesOptional.isPresent()) {
             repository.deleteById(nombre);
@@ -43,7 +43,7 @@ public class RolesService {
         }
     }
 
-    public boolean modificarPerfil(String nombre, Roles roles) {
+    public boolean modificarRole(String nombre, Roles roles) {
         Optional<Roles> rolesOptional = repository.findById(nombre);
         if (rolesOptional.isPresent()) {
             Roles existingRoles = rolesOptional.get();

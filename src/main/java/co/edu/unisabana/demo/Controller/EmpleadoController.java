@@ -23,19 +23,19 @@ public class EmpleadoController {
     }
 
     @PostMapping("/empleado")
-    public ResponseEntity<Empleado> guardarEmpleado(@RequestBody Empleado empleado){
-        Empleado newempleado =  service.guardarEmpleado(empleado);
+    public ResponseEntity<Empleado> guardarEmpleado(@RequestBody Empleado empleado) {
+        Empleado newempleado = service.guardarEmpleado(empleado);
 
-       return ResponseEntity.status(HttpStatus.CREATED).body(newempleado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(newempleado);
     }
 
     @GetMapping("/empleados")
-    public List<Empleado> consultarEmpleados(){
+    public List<Empleado> consultarEmpleados() {
         return service.consultarEmpleados();
     }
 
     @GetMapping("empleado/{id}")
-    public Empleado consultarEmpleado(@PathVariable Integer id){
+    public Empleado consultarEmpleado(@PathVariable Integer id) {
         return service.consultarEmpleado(id);
 
     }

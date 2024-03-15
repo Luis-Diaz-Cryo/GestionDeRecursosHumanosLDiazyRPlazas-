@@ -10,7 +10,6 @@ import lombok.Data;
 public class Perfiles {
 
 
-
     @Id
     @Column
     private Integer empId;
@@ -23,8 +22,6 @@ public class Perfiles {
 
     @Column
     private String Certificaciones;
-
-
 
 
 }

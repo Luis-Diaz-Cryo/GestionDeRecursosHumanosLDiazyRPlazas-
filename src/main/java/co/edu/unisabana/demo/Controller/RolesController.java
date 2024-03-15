@@ -23,17 +23,18 @@ public class RolesController {
     }
 
     @PostMapping("/role")
-    public String guardarRole(@RequestBody Roles roles){
+    public String guardarRole(@RequestBody Roles roles) {
         service.guardarRoles(roles);
         return "El role  ha sido guardado con éxito";
     }
+
     @GetMapping("/roles")
-    public List<Roles> consultarRoles(){
+    public List<Roles> consultarRoles() {
         return service.consultarRoles();
     }
 
     @GetMapping("/role/{nombre}")
-    public Roles cosultarPerfil(@PathVariable String nombre){
+    public Roles cosultarRolel(@PathVariable String nombre) {
         return service.consultarRole(nombre);
     }
 
@@ -49,7 +50,7 @@ public class RolesController {
 
     @PutMapping("/role/modi/{nombre}")
     public ResponseEntity<String> modificarRole(@PathVariable String nombre, @RequestBody Roles roles) {
-        boolean updated = service.modificarPerfil(nombre, roles);
+        boolean updated = service.modificarRole(nombre, roles);
         if (updated) {
             return new ResponseEntity<>("El Role ha sido modificado correctamente", HttpStatus.OK);
         } else {

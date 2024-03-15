@@ -21,18 +21,18 @@ public class PerfilesController {
     }
 
     @PostMapping("/perfil")
-    public String guardarPerfiles(@RequestBody Perfiles perfiles){
+    public String guardarPerfiles(@RequestBody Perfiles perfiles) {
         service.guardarPerfiles(perfiles);
         return "El perfil  ha sido guardado con éxito";
     }
 
     @GetMapping("/perfiles")
-    public List<Perfiles> consultarPerfiles(){
+    public List<Perfiles> consultarPerfiles() {
         return service.consultarPerfiles();
     }
 
     @GetMapping("/perfil/{empId}")
-    public Perfiles cosultarPerfil(@PathVariable Integer empId){
+    public Perfiles cosultarPerfil(@PathVariable Integer empId) {
         return service.consultarPerfil(empId);
     }
 
@@ -45,6 +45,7 @@ public class PerfilesController {
             return new ResponseEntity<>("El Perfil no pudo ser encontrado o eliminado", HttpStatus.NOT_FOUND);
         }
     }
+
     @PutMapping("/perfil/modi/{empId}")
     public ResponseEntity<String> modificarPerfil(@PathVariable Integer empId, @RequestBody Perfiles perfiles) {
         boolean updated = service.modificarPerfil(empId, perfiles);

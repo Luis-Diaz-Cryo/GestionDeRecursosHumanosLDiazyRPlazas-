@@ -17,7 +17,7 @@ public class EmpleadoService {
 
 
     @Autowired
-    public EmpleadoService(EmpleadoRepository repository){
+    public EmpleadoService(EmpleadoRepository repository) {
         this.repository = repository;
     }
 
@@ -26,11 +26,11 @@ public class EmpleadoService {
         return repository.save(empleado);
     }
 
-    public List<Empleado> consultarEmpleados(){
+    public List<Empleado> consultarEmpleados() {
         return repository.findAll();
     }
 
-    public Empleado consultarEmpleado(@PathVariable Integer id){
+    public Empleado consultarEmpleado(@PathVariable Integer id) {
         return repository.findById(id).orElse(null);
     }
 

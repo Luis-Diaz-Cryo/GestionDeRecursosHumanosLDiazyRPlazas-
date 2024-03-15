@@ -26,11 +26,11 @@ public class PerfilesService {
         repository.save(perfiles);
     }
 
-    public List<Perfiles> consultarPerfiles(){
+    public List<Perfiles> consultarPerfiles() {
         return repository.findAll();
     }
 
-    public Perfiles consultarPerfil(@PathVariable Integer id){
+    public Perfiles consultarPerfil(@PathVariable Integer id) {
         return repository.findById(id).orElse(null);
     }
 
