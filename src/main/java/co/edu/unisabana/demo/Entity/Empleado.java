@@ -24,4 +24,7 @@ public class Empleado {
 
     @Column
     private String Cargo;
+
+
+
 }
