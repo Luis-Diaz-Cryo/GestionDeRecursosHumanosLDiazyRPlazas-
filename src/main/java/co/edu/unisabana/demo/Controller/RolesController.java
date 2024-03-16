@@ -1,8 +1,7 @@
 package co.edu.unisabana.demo.Controller;
 
 
-import co.edu.unisabana.demo.Entity.Perfiles;
-import co.edu.unisabana.demo.Entity.Roles;
+import co.edu.unisabana.demo.Entity.Rol;
 import co.edu.unisabana.demo.Service.RolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,18 +22,18 @@ public class RolesController {
     }
 
     @PostMapping("/role")
-    public String guardarRole(@RequestBody Roles roles) {
+    public String guardarRole(@RequestBody Rol roles) {
         service.guardarRoles(roles);
         return "El role  ha sido guardado con éxito";
     }
 
     @GetMapping("/roles")
-    public List<Roles> consultarRoles() {
+    public List<Rol> consultarRoles() {
         return service.consultarRoles();
     }
 
     @GetMapping("/role/{nombre}")
-    public Roles cosultarRolel(@PathVariable String nombre) {
+    public Rol cosultarRolel(@PathVariable String nombre) {
         return service.consultarRole(nombre);
     }
 
@@ -49,7 +48,7 @@ public class RolesController {
     }
 
     @PutMapping("/role/modi/{nombre}")
-    public ResponseEntity<String> modificarRole(@PathVariable String nombre, @RequestBody Roles roles) {
+    public ResponseEntity<String> modificarRole(@PathVariable String nombre, @RequestBody Rol roles) {
         boolean updated = service.modificarRole(nombre, roles);
         if (updated) {
             return new ResponseEntity<>("El Role ha sido modificado correctamente", HttpStatus.OK);

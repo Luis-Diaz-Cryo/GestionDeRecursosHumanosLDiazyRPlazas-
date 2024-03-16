@@ -7,7 +7,7 @@ import lombok.Data;
 @Table
 @Entity
 @Data
-public class Perfiles {
+public class Perfil {
 
 
     @Id

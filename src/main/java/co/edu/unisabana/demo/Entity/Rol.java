@@ -9,7 +9,7 @@ import lombok.Data;
 @Table
 @Entity
 @Data
-public class Roles {
+public class Rol {
 
     @Id
     @Column

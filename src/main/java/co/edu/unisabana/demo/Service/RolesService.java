@@ -1,7 +1,6 @@
 package co.edu.unisabana.demo.Service;
 
-import co.edu.unisabana.demo.Entity.Perfiles;
-import co.edu.unisabana.demo.Entity.Roles;
+import co.edu.unisabana.demo.Entity.Rol;
 import co.edu.unisabana.demo.Repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,20 +20,20 @@ public class RolesService {
         this.repository = repository;
     }
 
-    public void guardarRoles(Roles roles) {
+    public void guardarRoles(Rol roles) {
         repository.save(roles);
     }
 
-    public List<Roles> consultarRoles() {
+    public List<Rol> consultarRoles() {
         return repository.findAll();
     }
 
-    public Roles consultarRole(@PathVariable String nombre) {
+    public Rol consultarRole(@PathVariable String nombre) {
         return repository.findById(nombre).orElse(null);
     }
 
     public boolean eliminarRole(String nombre) {
-        Optional<Roles> rolesOptional = repository.findById(nombre);
+        Optional<Rol> rolesOptional = repository.findById(nombre);
         if (rolesOptional.isPresent()) {
             repository.deleteById(nombre);
             return true;
@@ -43,10 +42,10 @@ public class RolesService {
         }
     }
 
-    public boolean modificarRole(String nombre, Roles roles) {
-        Optional<Roles> rolesOptional = repository.findById(nombre);
+    public boolean modificarRole(String nombre, Rol roles) {
+        Optional<Rol> rolesOptional = repository.findById(nombre);
         if (rolesOptional.isPresent()) {
-            Roles existingRoles = rolesOptional.get();
+            Rol existingRoles = rolesOptional.get();
             existingRoles.setResponsibilidades(roles.getResponsibilidades());
             repository.save(existingRoles);
             return true;

@@ -1,7 +1,6 @@
 package co.edu.unisabana.demo.Controller;
 
-import co.edu.unisabana.demo.Entity.Empleado;
-import co.edu.unisabana.demo.Entity.Perfiles;
+import co.edu.unisabana.demo.Entity.Perfil;
 import co.edu.unisabana.demo.Service.PerfilesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,18 +20,18 @@ public class PerfilesController {
     }
 
     @PostMapping("/perfil")
-    public String guardarPerfiles(@RequestBody Perfiles perfiles) {
+    public String guardarPerfiles(@RequestBody Perfil perfiles) {
         service.guardarPerfiles(perfiles);
         return "El perfil  ha sido guardado con éxito";
     }
 
     @GetMapping("/perfiles")
-    public List<Perfiles> consultarPerfiles() {
+    public List<Perfil> consultarPerfiles() {
         return service.consultarPerfiles();
     }
 
     @GetMapping("/perfil/{empId}")
-    public Perfiles cosultarPerfil(@PathVariable Integer empId) {
+    public Perfil cosultarPerfil(@PathVariable Integer empId) {
         return service.consultarPerfil(empId);
     }
 
@@ -47,7 +46,7 @@ public class PerfilesController {
     }
 
     @PutMapping("/perfil/modi/{empId}")
-    public ResponseEntity<String> modificarPerfil(@PathVariable Integer empId, @RequestBody Perfiles perfiles) {
+    public ResponseEntity<String> modificarPerfil(@PathVariable Integer empId, @RequestBody Perfil perfiles) {
         boolean updated = service.modificarPerfil(empId, perfiles);
         if (updated) {
             return new ResponseEntity<>("El Perfil ha sido modificado correctamente", HttpStatus.OK);
