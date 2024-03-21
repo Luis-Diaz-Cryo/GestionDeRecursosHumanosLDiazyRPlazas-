@@ -11,9 +11,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.mysql.cj.conf.PropertyKey.logger;
+
 
 @RestController
+
 public class EmpleadoController {
     private final EmpleadoService service;
 

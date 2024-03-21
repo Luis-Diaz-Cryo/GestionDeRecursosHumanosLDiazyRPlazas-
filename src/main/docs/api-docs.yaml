@@ -1,0 +1,326 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+paths:
+  /role/modi/{nombre}:
+    put:
+      tags:
+      - roles-controller
+      operationId: modificarRole
+      parameters:
+      - name: nombre
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Rol'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /perfil/modi/{empId}:
+    put:
+      tags:
+      - perfiles-controller
+      operationId: modificarPerfil
+      parameters:
+      - name: empId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Perfil'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /empleado/modi/{id}:
+    put:
+      tags:
+      - empleado-controller
+      operationId: modificarEmpleado
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Empleado'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /role:
+    post:
+      tags:
+      - roles-controller
+      operationId: guardarRole
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Rol'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /perfil:
+    post:
+      tags:
+      - perfiles-controller
+      operationId: guardarPerfiles
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Perfil'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /empleado:
+    post:
+      tags:
+      - empleado-controller
+      operationId: guardarEmpleado
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Empleado'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Empleado'
+  /roles:
+    get:
+      tags:
+      - roles-controller
+      operationId: consultarRoles
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Rol'
+  /role/{nombre}:
+    get:
+      tags:
+      - roles-controller
+      operationId: cosultarRolel
+      parameters:
+      - name: nombre
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Rol'
+  /perfiles:
+    get:
+      tags:
+      - perfiles-controller
+      operationId: consultarPerfiles
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Perfil'
+  /perfil/{empId}:
+    get:
+      tags:
+      - perfiles-controller
+      operationId: cosultarPerfil
+      parameters:
+      - name: empId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Perfil'
+  /empleados:
+    get:
+      tags:
+      - empleado-controller
+      operationId: consultarEmpleados
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Empleado'
+  /empleado/{id}:
+    get:
+      tags:
+      - empleado-controller
+      operationId: consultarEmpleado
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Empleado'
+  /role/borrar/{nombre}:
+    delete:
+      tags:
+      - roles-controller
+      operationId: eliminarRole
+      parameters:
+      - name: nombre
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /perfil/borrar/{empId}:
+    delete:
+      tags:
+      - perfiles-controller
+      operationId: eliminarPerfil
+      parameters:
+      - name: empId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /empleado/borrar/{id}:
+    delete:
+      tags:
+      - empleado-controller
+      operationId: eliminarEmpleado
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+components:
+  schemas:
+    Rol:
+      type: object
+      properties:
+        nombre:
+          type: string
+        responsibilidades:
+          type: string
+    Perfil:
+      type: object
+      properties:
+        empId:
+          type: integer
+          format: int32
+        habilidades:
+          type: string
+        experencias:
+          type: string
+        certificaciones:
+          type: string
+    Empleado:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        nombre:
+          type: string
+        direccion:
+          type: string
+        telefono:
+          type: integer
+          format: int32
+        cargo:
+          type: string
