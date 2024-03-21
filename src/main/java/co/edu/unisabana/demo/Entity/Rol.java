@@ -1,4 +1,4 @@
-package co.edu.unisabana.demo.Entity;
+package co.edu.unisabana.demo.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,8 +13,8 @@ public class Rol {
 
     @Id
     @Column
-    private String Nombre;
+    private String nombre;
 
     @Column
-    private String Responsibilidades;
+    private String responsibilidades;
 }

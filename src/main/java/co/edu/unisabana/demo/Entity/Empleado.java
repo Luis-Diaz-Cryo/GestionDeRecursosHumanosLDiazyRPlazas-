@@ -1,4 +1,4 @@
-package co.edu.unisabana.demo.Entity;
+package co.edu.unisabana.demo.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -14,16 +14,16 @@ public class Empleado {
     private Integer id;
 
     @Column
-    private String Nombre;
+    private String nombre;
 
     @Column
-    private String Direccion;
+    private String direccion;
 
     @Column
-    private Integer Telefono;
+    private Integer telefono;
 
     @Column
-    private String Cargo;
+    private String cargo;
 
 
 }

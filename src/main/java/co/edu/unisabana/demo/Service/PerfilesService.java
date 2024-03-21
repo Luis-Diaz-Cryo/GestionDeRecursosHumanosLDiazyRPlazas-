@@ -1,8 +1,8 @@
-package co.edu.unisabana.demo.Service;
+package co.edu.unisabana.demo.service;
 
 
-import co.edu.unisabana.demo.Entity.Perfil;
-import co.edu.unisabana.demo.Repository.PerfilesRepository;
+import co.edu.unisabana.demo.entity.Perfil;
+import co.edu.unisabana.demo.repository.PerfilesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;

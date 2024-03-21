@@ -1,4 +1,4 @@
-package co.edu.unisabana.demo.Entity;
+package co.edu.unisabana.demo.entity;
 
 
 import jakarta.persistence.*;
@@ -15,13 +15,13 @@ public class Perfil {
     private Integer empId;
 
     @Column
-    private String Habilidades;
+    private String habilidades;
 
     @Column
-    private String Experencias;
+    private String experencias;
 
     @Column
-    private String Certificaciones;
+    private String certificaciones;
 
 
 }
