@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "51a9b245-9b8a-4055-9b1d-bed55030afff",
+		"name": "Gestion De Recursos Humanos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33466055",
+		"_collection_link": "https://www.postman.com/cryosat-architect-65234178/workspace/my-workspace/collection/33466055-51a9b245-9b8a-4055-9b1d-bed55030afff?action=share&source=collection_link&creator=33466055"
+	},
+	"item": [
+		{
+			"name": "AgregarEmpleados",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1243,\r\n    \"Nombre\": \"Kevin\",\r\n    \"Direccion\": \"Cl 71 No. 28B-90, C.P 76001\",\r\n    \"Telefono\": 304252522,\r\n    \"Cargo\": \"Jefe\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/empleado"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Perfiles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"empId\":454542,\r\n    \"habilidades\":\"Liderazjo\",\r\n    \"experencias\":\"Esso\",\r\n    \"certificaciones\":\"especialialista en recursus de humanos\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/perfil"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Rol",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Representante de Ventas\",\r\n    \"responsibilidades\":\"Generar clientes potenciales y prospectar nuevos clientes.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/role"
+			},
+			"response": []
+		},
+		{
+			"name": "Get empleados",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/empleados"
+			},
+			"response": []
+		},
+		{
+			"name": "Get empleado",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/empleado/3424242"
+			},
+			"response": []
+		},
+		{
+			"name": "get Perfiles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/perfiles"
+			},
+			"response": []
+		},
+		{
+			"name": "get roles",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "get rol",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localHost:8080/role/Representante de Ventas"
+			},
+			"response": []
+		},
+		{
+			"name": "modificar empleado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 433,\r\n        \"nombre\": \"Luis\",\r\n        \"cargo\": \"manager\",\r\n        \"telefono\": 5343232,\r\n        \"direccion\": \"Cl 12 No. 43B-49, Medellín\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/empleado/modi/433"
+			},
+			"response": []
+		},
+		{
+			"name": "modificar Perfil",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 344,\r\n        \"nombre\": \"Camilo\",\r\n        \"cargo\": \"manager\",\r\n        \"telefono\": 5343232,\r\n        \"direccion\": \"Cl 12 No. 43B-49, Medellín\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/perfil/modi/442"
+			},
+			"response": []
+		},
+		{
+			"name": "modificar Rol",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"id\": 344,\r\n        \"nombre\": \"Camilo\",\r\n        \"cargo\": \"manager\",\r\n        \"telefono\": 5343232,\r\n        \"direccion\": \"Cl 12 No. 43B-49, Medellín\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/role/modi/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete empleado",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/empleado/borrar/1243"
+			},
+			"response": []
+		},
+		{
+			"name": "delete Perfil",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/perfil/borrar/"
+			},
+			"response": []
+		},
+		{
+			"name": "delete Rol",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localHost:8080/role/borrar/"
+			},
+			"response": []
+		}
+	]
+}
