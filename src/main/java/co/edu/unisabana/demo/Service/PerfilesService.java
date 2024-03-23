@@ -20,8 +20,8 @@ public class PerfilesService {
         this.repository = repository;
     }
 
-    public void guardarPerfiles(Perfil perfiles) {
-        repository.save(perfiles);
+    public Perfil guardarPerfiles(Perfil perfiles) {
+        return repository.save(perfiles);
     }
 
     public List<Perfil> consultarPerfiles() {

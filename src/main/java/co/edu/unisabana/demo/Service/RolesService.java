@@ -20,8 +20,8 @@ public class RolesService {
         this.repository = repository;
     }
 
-    public void guardarRoles(Rol roles) {
-        repository.save(roles);
+    public Rol guardarRoles(Rol roles){
+        return repository.save(roles);
     }
 
     public List<Rol> consultarRoles() {
