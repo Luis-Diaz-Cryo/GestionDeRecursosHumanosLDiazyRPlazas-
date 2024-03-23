@@ -1,8 +1,8 @@
-package co.edu.unisabana.demo.controller;
+package co.edu.unisabana.demo.Controller;
 
 
-import co.edu.unisabana.demo.entity.Rol;
-import co.edu.unisabana.demo.service.RolesService;
+import co.edu.unisabana.demo.Entity.Rol;
+import co.edu.unisabana.demo.Service.RolesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

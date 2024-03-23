@@ -1,8 +1,7 @@
-package co.edu.unisabana.demo.controller;
+package co.edu.unisabana.demo.Controller;
 
-import co.edu.unisabana.demo.entity.Empleado;
-import co.edu.unisabana.demo.entity.Perfil;
-import co.edu.unisabana.demo.service.PerfilesService;
+import co.edu.unisabana.demo.Entity.Perfil;
+import co.edu.unisabana.demo.Service.PerfilesService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -15,11 +14,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.Collections;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 
-@WebMvcTest(co.edu.unisabana.demo.controller.PerfilesController.class)
+@WebMvcTest(co.edu.unisabana.demo.Controller.PerfilesController.class)
 @AutoConfigureMockMvc
 class PerfilesControllerTest {
 

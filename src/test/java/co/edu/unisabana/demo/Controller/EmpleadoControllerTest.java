@@ -1,7 +1,7 @@
-package co.edu.unisabana.demo.controller;
+package co.edu.unisabana.demo.Controller;
 
-import co.edu.unisabana.demo.entity.Empleado;
-import co.edu.unisabana.demo.service.EmpleadoService;
+import co.edu.unisabana.demo.Entity.Empleado;
+import co.edu.unisabana.demo.Service.EmpleadoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -16,7 +16,7 @@ import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 
-@WebMvcTest(co.edu.unisabana.demo.controller.EmpleadoController.class)
+@WebMvcTest(co.edu.unisabana.demo.Controller.EmpleadoController.class)
 @AutoConfigureMockMvc
 class EmpleadoControllerTest {
 

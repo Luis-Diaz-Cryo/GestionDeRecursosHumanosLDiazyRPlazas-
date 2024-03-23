@@ -1,9 +1,8 @@
-package co.edu.unisabana.demo.controller;
+package co.edu.unisabana.demo.Controller;
 
 
-import co.edu.unisabana.demo.entity.Empleado;
-import co.edu.unisabana.demo.service.EmpleadoService;
-import org.apache.coyote.Response;
+import co.edu.unisabana.demo.Entity.Empleado;
+import co.edu.unisabana.demo.Service.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package co.edu.unisabana.demo.controller;
+package co.edu.unisabana.demo.Controller;
 
-import co.edu.unisabana.demo.entity.Perfil;
-import co.edu.unisabana.demo.service.PerfilesService;
+import co.edu.unisabana.demo.Entity.Perfil;
+import co.edu.unisabana.demo.Service.PerfilesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

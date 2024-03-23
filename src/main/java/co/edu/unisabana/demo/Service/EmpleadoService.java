@@ -1,11 +1,10 @@
-package co.edu.unisabana.demo.service;
+package co.edu.unisabana.demo.Service;
 
-import co.edu.unisabana.demo.entity.Empleado;
-import co.edu.unisabana.demo.repository.EmpleadoRepository;
+import co.edu.unisabana.demo.Entity.Empleado;
+import co.edu.unisabana.demo.Repository.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
