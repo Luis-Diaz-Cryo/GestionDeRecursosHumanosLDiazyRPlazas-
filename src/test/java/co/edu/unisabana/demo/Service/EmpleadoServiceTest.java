@@ -23,9 +23,10 @@ class EmpleadoServiceTest {
     private EmpleadoService service;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         MockitoAnnotations.openMocks(this);
     }
+
     @Test
     void guardarEmpleado() {
         Empleado empleadoParaGuardar = new Empleado();
@@ -35,22 +36,15 @@ class EmpleadoServiceTest {
         empleadoParaGuardar.setTelefono(123456);
         empleadoParaGuardar.setCargo("Cargo Krlosss");
 
-        //Se define el comportamiento esperado del repo al guardar a Krlos
         when(repository.save(empleadoParaGuardar)).thenReturn(empleadoParaGuardar);
-
-        //Se llama al método del servicio
         Empleado empleadoGuardado = service.guardarEmpleado(empleadoParaGuardar);
-
-        //Verificar que se llama al método save del repo con el Krlos correcto
         verify(repository, times(1)).save(empleadoParaGuardar);
-
-        //Verificar que el Krlos que se devolvió es el propio Krlos
         assertEquals(empleadoParaGuardar, empleadoGuardado);
 
     }
 
     @Test
-    void consultarEmpleado(){
+    void consultarEmpleado() {
         Integer id = 1;
         Empleado empleado = new Empleado();
         empleado.setId(id);
@@ -59,37 +53,47 @@ class EmpleadoServiceTest {
         empleado.setTelefono(123456);
         empleado.setCargo("Cargo Krlosss");
 
-        //Mockear el comportamiento del repo para la prueba
         when(repository.findById(id)).thenReturn(Optional.of(empleado));
-
-        //Invocar al método de la clase bajo prueba
         Empleado resultado = service.consultarEmpleado(id);
-
-        //Verificar que el método findById fue llamado con el ID correcto
         verify(repository, times(1)).findById(id);
 
-        //Verificar que el resultado retornado es el mismo del empleado esperado (1)
         assertEquals(empleado, resultado);
     }
 
     @Test
-    void eliminarEmpleado(){
+    void eliminarEmpleado() {
         Integer id = 1;
         Empleado empleado = new Empleado();
         when(repository.findById(id)).thenReturn(Optional.of(empleado));
-
-        //Invocar al método de la clase bajo prueba
         boolean resultado = service.eliminarEmpleado(id);
-
-        //Verificar que el método findbyId fue llamado con el Id correcto
         verify(repository, times(1)).findById(id);
-
-        //Verificar que el ID retornado es el del empleado que se espera
         assertTrue(resultado);
     }
 
     @Test
-    void modificarEmpleado(){
+    void modificarEmpleado() {
+        Integer id = 1;
+        Empleado empleado = new Empleado();
+        empleado.setId(id);
+        empleado.setNombre("Nuevo nombre");
+        empleado.setDireccion("Nueva dirección");
+        empleado.setTelefono(987654321);
+        empleado.setCargo("Nuevo cargo");
 
+
+        when(repository.findById(id)).thenReturn(Optional.of(new Empleado()));
+        when(repository.save(any(Empleado.class))).thenReturn(empleado);
+
+
+        boolean resultado = service.modificarEmpleado(id, empleado);
+
+
+        verify(repository, times(1)).findById(id);
+        verify(repository, times(1)).save(any(Empleado.class));
+
+
+        assertTrue(resultado);
     }
+
 }
+
