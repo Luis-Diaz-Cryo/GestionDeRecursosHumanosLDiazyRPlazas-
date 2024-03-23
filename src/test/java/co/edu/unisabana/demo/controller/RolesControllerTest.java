@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 
-@WebMvcTest(RolesController.class)
+@WebMvcTest(co.edu.unisabana.demo.controller.RolesController.class)
 @AutoConfigureMockMvc
 class RolesControllerTest {
 

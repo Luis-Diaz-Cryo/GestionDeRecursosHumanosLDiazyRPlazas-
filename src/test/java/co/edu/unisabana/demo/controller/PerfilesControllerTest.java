@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 
-@WebMvcTest(PerfilesController.class)
+@WebMvcTest(co.edu.unisabana.demo.controller.PerfilesController.class)
 @AutoConfigureMockMvc
 class PerfilesControllerTest {
 

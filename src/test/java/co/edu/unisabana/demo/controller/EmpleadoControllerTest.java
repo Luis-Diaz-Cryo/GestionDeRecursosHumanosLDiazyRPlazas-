@@ -16,7 +16,7 @@ import java.util.Collections;
 
 import static org.mockito.Mockito.when;
 
-@WebMvcTest(EmpleadoController.class)
+@WebMvcTest(co.edu.unisabana.demo.controller.EmpleadoController.class)
 @AutoConfigureMockMvc
 class EmpleadoControllerTest {
 

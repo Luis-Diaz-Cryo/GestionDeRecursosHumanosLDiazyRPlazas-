@@ -1,8 +1,6 @@
-package co.edu.unisabana.demo.Service;
+package co.edu.unisabana.demo.service;
 
 import co.edu.unisabana.demo.entity.Empleado;
-import co.edu.unisabana.demo.service.EmpleadoService;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
