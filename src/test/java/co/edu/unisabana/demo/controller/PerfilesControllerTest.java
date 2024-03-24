@@ -37,6 +37,7 @@ class PerfilesControllerTest {
                         .content("{}"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
+
     @Test
     void dadoPerfilinvalido_cuandoGuardarPerfil_entoncesRetornaBadRequest() throws Exception {
         Perfil perfil = new Perfil();

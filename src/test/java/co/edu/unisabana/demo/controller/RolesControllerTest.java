@@ -28,7 +28,7 @@ class RolesControllerTest {
     private RolesService rolesService;
 
     @Test
-    void dadoRole_cuandoGuardarRole_entoncesRetornaOk()throws Exception {
+    void dadoRole_cuandoGuardarRole_entoncesRetornaOk() throws Exception {
         Rol rol = new Rol();
         when(rolesService.guardarRoles(rol)).thenReturn(rol);
 
@@ -39,7 +39,7 @@ class RolesControllerTest {
     }
 
     @Test
-    void dadoRoleInvalido_cuandoGuardarRole_entoncesRetornaBadRequest()throws Exception {
+    void dadoRoleInvalido_cuandoGuardarRole_entoncesRetornaBadRequest() throws Exception {
         Rol rol = new Rol();
         when(rolesService.guardarRoles(rol)).thenReturn(rol);
 
@@ -48,7 +48,6 @@ class RolesControllerTest {
                         .content("{invalid_field: value}"))
                 .andExpect(MockMvcResultMatchers.status().isBadRequest());
     }
-
 
     @Test
     void dadoNoHayDatos_cuandoConsultarRoles_entoncesRetornaListaVacia() throws Exception {

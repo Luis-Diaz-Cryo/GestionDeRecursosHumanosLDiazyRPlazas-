@@ -37,21 +37,21 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework:spring-webflux'
 	testImplementation 'org.springframework.graphql:spring-graphql-test'
-	testImplementation "org.mockito:mockito-core:3.+" //El moco para las pruebas
+	testImplementation "org.mockito:mockito-core:3.+"
 	testImplementation 'org.pitest:pitest:1.15.0'
 	pitest  'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.15.0'
 
 }
 
 pitest {
-	targetClasses = ['co.edu.unisabana.*']  //by default "${project.group}.*"
-	pitestVersion = '1.15.0' //not needed when a default PIT version should be used
+	targetClasses = ['co.edu.unisabana.*']
+	pitestVersion = '1.15.0'
 	threads = 4
 	outputFormats = ['XML', 'HTML']
 	timestampedReports = false
 	junit5PluginVersion = '1.2.1'
 	verbose = true
-	//junit5Plugin = true
+
 }
 
 tasks.named('test') {

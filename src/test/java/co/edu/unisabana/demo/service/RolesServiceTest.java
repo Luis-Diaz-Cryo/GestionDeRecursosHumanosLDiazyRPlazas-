@@ -25,9 +25,10 @@ class RolesServiceTest {
     private RolesService service;
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         MockitoAnnotations.initMocks(this);
     }
+
     @Test
     void DadoGuardarRol_CuandoRol_EntoncesGuardarElRol() {
         Rol mRol = new Rol();
@@ -42,13 +43,10 @@ class RolesServiceTest {
 
     @Test
     void DadoRolesExistentes_CuandoConsultarRolesActuales_EntoncesMostrarTodosLosRoles() {
-
-        //Se inicializa el moco para testear
         List<Rol> mockRolesList = Arrays.asList(new Rol(), new Rol());
         when(repository.findAll()).thenReturn(mockRolesList);
 
-        //Se prueba el moco
-        List<Rol>resultado = service.consultarRoles();
+        List<Rol> resultado = service.consultarRoles();
         assertNotNull(resultado);
         assertEquals(mockRolesList.size(), resultado.size());
 
@@ -57,7 +55,6 @@ class RolesServiceTest {
 
     @Test
     void DadoRol_CuandoConsultarNombreRol_MostrarRol() {
-
         String nombre = "Rol 1";
         Rol mRol = new Rol();
         when(repository.findById(nombre)).thenReturn(Optional.of(mRol));
@@ -67,12 +64,10 @@ class RolesServiceTest {
         assertEquals(mRol, resultado);
 
         verify(repository, times(1)).findById(nombre);
-
     }
 
     @Test
     void DadoRolExistente_CuandoRolNoNecesario_EntoncesEliminarRolExistente() {
-
         String nombre = "Rol 1";
         when(repository.findById(nombre)).thenReturn(Optional.of(new Rol()));
 
@@ -81,12 +76,10 @@ class RolesServiceTest {
 
         verify(repository, times(1)).findById(nombre);
         verify(repository, times(1)).deleteById(nombre);
-
     }
 
     @Test
     void DadoRolExistente_CuandoRolDesactualizado_EntoncesModificarRolExistente() {
-
         String nombre = "Rol 1";
         Rol rolExistente = new Rol();
         Rol rolActualizado = new Rol();
@@ -97,6 +90,5 @@ class RolesServiceTest {
 
         verify(repository, times(1)).findById(nombre);
         verify(repository, times(1)).save((rolExistente));
-
     }
 }
