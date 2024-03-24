@@ -39,6 +39,18 @@ class RolesControllerTest {
     }
 
     @Test
+    void dadoRoleInvalido_cuandoGuardarRole_entoncesRetornaBadRequest()throws Exception {
+        Rol rol = new Rol();
+        when(rolesService.guardarRoles(rol)).thenReturn(rol);
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/role")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{invalid_field: value}"))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest());
+    }
+
+
+    @Test
     void dadoNoHayDatos_cuandoConsultarRoles_entoncesRetornaListaVacia() throws Exception {
         when(rolesService.consultarRoles()).thenReturn(Collections.emptyList());
         mockMvc.perform(MockMvcRequestBuilders.get("/roles"))

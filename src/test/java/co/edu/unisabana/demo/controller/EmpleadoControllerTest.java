@@ -36,6 +36,16 @@ class EmpleadoControllerTest {
                         .content("{}"))
                 .andExpect(MockMvcResultMatchers.status().isCreated());
     }
+    @Test
+    void dadoEmpleadoInvalido_cuandoGuardarEmpleado_entoncesRetornaBadRequests() throws Exception {
+        Empleado empleado = new Empleado();
+        mockMvc.perform(MockMvcRequestBuilders.post("/empleado")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{invalid_field: value}"))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest());
+    }
+
+
 
     @Test
     void dadoNoHayDatos_cuandoConsultarEmpleados_entoncesRetornaListaVacia() throws Exception {

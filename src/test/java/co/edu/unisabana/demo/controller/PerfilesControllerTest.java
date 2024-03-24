@@ -37,6 +37,16 @@ class PerfilesControllerTest {
                         .content("{}"))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
+    @Test
+    void dadoPerfilinvalido_cuandoGuardarPerfil_entoncesRetornaBadRequest() throws Exception {
+        Perfil perfil = new Perfil();
+        when(perfilService.guardarPerfiles(perfil)).thenReturn(perfil);
+
+        mockMvc.perform(MockMvcRequestBuilders.post("/perfil")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("{invalid_field: value}"))
+                .andExpect(MockMvcResultMatchers.status().isBadRequest());
+    }
 
     @Test
     void dadoNoHayDatos_cuandoConsultarPerfiles_entoncesRetornaListaVacia() throws Exception {
