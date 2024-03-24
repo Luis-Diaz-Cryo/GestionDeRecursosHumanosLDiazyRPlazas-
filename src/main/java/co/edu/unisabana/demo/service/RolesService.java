@@ -1,7 +1,7 @@
 package co.edu.unisabana.demo.service;
 
-import co.edu.unisabana.demo.Entity.Rol;
-import co.edu.unisabana.demo.Repository.RolesRepository;
+import co.edu.unisabana.demo.entity.Rol;
+import co.edu.unisabana.demo.repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;

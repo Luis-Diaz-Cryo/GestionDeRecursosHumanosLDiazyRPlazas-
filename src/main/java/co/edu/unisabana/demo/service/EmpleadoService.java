@@ -1,7 +1,7 @@
 package co.edu.unisabana.demo.service;
 
-import co.edu.unisabana.demo.Entity.Empleado;
-import co.edu.unisabana.demo.Repository.EmpleadoRepository;
+import co.edu.unisabana.demo.entity.Empleado;
+import co.edu.unisabana.demo.repository.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;

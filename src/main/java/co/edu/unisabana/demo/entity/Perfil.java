@@ -1,4 +1,4 @@
-package co.edu.unisabana.demo.Entity;
+package co.edu.unisabana.demo.entity;
 
 
 import jakarta.persistence.*;

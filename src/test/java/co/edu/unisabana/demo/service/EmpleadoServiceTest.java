@@ -1,6 +1,6 @@
 package co.edu.unisabana.demo.service;
 
-import co.edu.unisabana.demo.Entity.Empleado;
+import co.edu.unisabana.demo.entity.Empleado;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -15,7 +15,7 @@ import static org.mockito.Mockito.*;
 class EmpleadoServiceTest {
 
     @Mock
-    private co.edu.unisabana.demo.Repository.EmpleadoRepository repository;
+    private co.edu.unisabana.demo.repository.EmpleadoRepository repository;
 
     @InjectMocks
     private EmpleadoService service;

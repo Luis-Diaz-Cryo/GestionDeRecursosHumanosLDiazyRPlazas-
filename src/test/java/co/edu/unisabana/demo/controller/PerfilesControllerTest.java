@@ -1,6 +1,6 @@
 package co.edu.unisabana.demo.controller;
 
-import co.edu.unisabana.demo.Entity.Perfil;
+import co.edu.unisabana.demo.entity.Perfil;
 import co.edu.unisabana.demo.service.PerfilesService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

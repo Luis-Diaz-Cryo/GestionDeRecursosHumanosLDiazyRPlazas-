@@ -1,7 +1,7 @@
 package co.edu.unisabana.demo.controller;
 
 
-import co.edu.unisabana.demo.Entity.Empleado;
+import co.edu.unisabana.demo.entity.Empleado;
 import co.edu.unisabana.demo.service.EmpleadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

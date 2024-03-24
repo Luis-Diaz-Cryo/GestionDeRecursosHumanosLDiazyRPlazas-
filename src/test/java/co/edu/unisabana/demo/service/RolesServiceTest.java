@@ -1,7 +1,7 @@
 package co.edu.unisabana.demo.service;
 
-import co.edu.unisabana.demo.Entity.Rol;
-import co.edu.unisabana.demo.Repository.RolesRepository;
+import co.edu.unisabana.demo.entity.Rol;
+import co.edu.unisabana.demo.repository.RolesRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

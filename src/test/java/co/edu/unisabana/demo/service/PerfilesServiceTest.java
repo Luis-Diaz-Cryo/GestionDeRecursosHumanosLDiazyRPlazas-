@@ -4,8 +4,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import co.edu.unisabana.demo.Entity.Perfil;
-import co.edu.unisabana.demo.Repository.PerfilesRepository;
+import co.edu.unisabana.demo.entity.Perfil;
+import co.edu.unisabana.demo.repository.PerfilesRepository;
 
 import java.util.Optional;
 
