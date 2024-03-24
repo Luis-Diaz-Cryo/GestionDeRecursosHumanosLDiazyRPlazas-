@@ -38,7 +38,6 @@ class EmpleadoServiceTest {
         Empleado empleadoGuardado = service.guardarEmpleado(empleadoParaGuardar);
         verify(repository, times(1)).save(empleadoParaGuardar);
         assertEquals(empleadoParaGuardar, empleadoGuardado);
-
     }
 
     @Test
@@ -78,17 +77,13 @@ class EmpleadoServiceTest {
         empleado.setTelefono(987654321);
         empleado.setCargo("Nuevo cargo");
 
-
         when(repository.findById(id)).thenReturn(Optional.of(new Empleado()));
         when(repository.save(any(Empleado.class))).thenReturn(empleado);
 
-
         boolean resultado = service.modificarEmpleado(id, empleado);
-
 
         verify(repository, times(1)).findById(id);
         verify(repository, times(1)).save(any(Empleado.class));
-
 
         assertTrue(resultado);
     }
