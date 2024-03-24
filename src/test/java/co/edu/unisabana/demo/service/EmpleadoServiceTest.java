@@ -1,4 +1,4 @@
-package co.edu.unisabana.demo.Service;
+package co.edu.unisabana.demo.service;
 
 import co.edu.unisabana.demo.Entity.Empleado;
 import org.junit.jupiter.api.BeforeEach;

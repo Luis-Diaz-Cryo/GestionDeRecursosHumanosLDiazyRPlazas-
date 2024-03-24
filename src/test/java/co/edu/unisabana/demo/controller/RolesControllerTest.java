@@ -1,7 +1,7 @@
-package co.edu.unisabana.demo.Controller;
+package co.edu.unisabana.demo.controller;
 
 import co.edu.unisabana.demo.Entity.Rol;
-import co.edu.unisabana.demo.Service.RolesService;
+import co.edu.unisabana.demo.service.RolesService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -17,7 +17,7 @@ import java.util.Collections;
 import static org.mockito.Mockito.when;
 
 
-@WebMvcTest(co.edu.unisabana.demo.Controller.RolesController.class)
+@WebMvcTest(co.edu.unisabana.demo.controller.RolesController.class)
 @AutoConfigureMockMvc
 class RolesControllerTest {
 

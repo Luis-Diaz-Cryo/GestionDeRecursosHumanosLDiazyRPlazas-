@@ -1,4 +1,4 @@
-package co.edu.unisabana.demo.Service;
+package co.edu.unisabana.demo.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
