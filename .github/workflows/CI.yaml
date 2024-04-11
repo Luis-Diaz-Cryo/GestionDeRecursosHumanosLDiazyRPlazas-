@@ -1,0 +1,22 @@
+name: Continous Integracion
+
+on:
+  pull_request:
+  branches: ['main']
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el proyecto
+        uses: actions/checkout@v4
+      - name: Instalando java
+        uses: actions/setup-java@v4
+        with:
+          distributions: 'temurin'
+          java-version: '17'
+      - name: Configurando gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Compilando El proyecto build project
+        run: ./gradle build
