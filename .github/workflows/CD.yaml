@@ -1,0 +1,26 @@
+name: Continuous Delivery
+
+on:
+  push:
+    branches: ['main']
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el proyecto
+        uses: actions/checkout@v4
+      - name: Instalando java
+        uses: actions/setup-java@v4
+        with:
+          distributions: 'temurin'
+          java-version: '17'
+      - name: Configurando gradle
+        uses: gradle/gradle-build-action@v2
+      - name: Compilando el proyecto build project
+        run: ./gradle build
+
+        cuando haga merge a la rama vaya y cree la imagen de docker, suba la iamgen 
+        al repo de dockerhub (trabajar con secrets) se debe hacer un docker login con la clave que
+        no se puede quedar en el código
+        Tiene que tomar la versión con la que esté en el gradle, que la imagen de docker se cree 
+        a partir del version del build.gradle
