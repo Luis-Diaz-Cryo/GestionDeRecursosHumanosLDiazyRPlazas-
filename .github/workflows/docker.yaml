@@ -28,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags:
+          tags: Rplazas/GestionDeRecursos:${{ github.run_number }}
