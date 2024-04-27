@@ -12,11 +12,11 @@ jobs:
       - name: Instalando java
         uses: actions/setup-java@v4
         with:
-          distributions: 'temurin'
+          distribution: 'temurin'
           java-version: '17'
       - name: Configurando gradle
         uses: gradle/gradle-build-action@v2
       - name: Compilando el proyecto build project
-        run: ./gradle build
+        run: ./gradlew build
 
 
