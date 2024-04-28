@@ -31,3 +31,4 @@ jobs:
       - name: Build y push imagen Docker
         run: |
           docker buildx build --platform linux/amd64,linux/arm64 -t lplazas2/gestionderecursoshumanos:${{ github.run_number }} --push .
+ 
