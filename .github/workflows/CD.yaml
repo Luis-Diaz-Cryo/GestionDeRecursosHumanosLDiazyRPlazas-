@@ -17,6 +17,8 @@ jobs:
       - name: Configurando gradle
         uses: gradle/gradle-build-action@v2
       - name: Compilando el proyecto build project
-        run: ./gradlew build
+        run: |
+          chmod +x ./gradlew
+          ./gradlew build
 
 
