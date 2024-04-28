@@ -28,4 +28,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: Lplazas2/gestionderecursoshumanos:${{ github.run_number }}
+          tags: lplazas2/gestionderecursoshumanos:${{ github.run_number }}
