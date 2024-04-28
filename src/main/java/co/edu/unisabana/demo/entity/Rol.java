@@ -11,6 +11,7 @@ import lombok.Data;
 @Data
 public class Rol {
 
+
     @Id
     @Column
     private String nombre;
