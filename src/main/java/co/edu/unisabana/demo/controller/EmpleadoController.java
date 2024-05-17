@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-
+@CrossOrigin("http://localhost:3000/")
 public class EmpleadoController {
     private final EmpleadoService service;
 
@@ -34,7 +34,7 @@ public class EmpleadoController {
         return service.consultarEmpleados();
     }
 
-    @GetMapping("empleado/{id}")
+    @GetMapping("/empleado/{id}")
     public Empleado consultarEmpleado(@PathVariable Integer id) {
         return service.consultarEmpleado(id);
 
