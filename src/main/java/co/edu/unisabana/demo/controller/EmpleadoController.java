@@ -13,7 +13,7 @@ import java.util.List;
 
 
 @RestController
-
+@CrossOrigin("http://localhost:3000/")
 public class EmpleadoController {
     private final EmpleadoService service;
 
